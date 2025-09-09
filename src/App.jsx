@@ -27,7 +27,7 @@ export default function App() {
             package: WalletConnectProvider,
             options: {
               rpc: {
-                1337: "https://api.zan.top/node/v1/pharos/testnet/"
+                688688: "https://api.zan.top/node/v1/pharos/testnet/"
               }
             }
           }
