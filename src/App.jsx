@@ -75,11 +75,11 @@ export default function App() {
   const loadContractData = async () => {
     if (!contract) return;
     try {
-      const [currentSupply, maxSupplyValue] = await Promise.all([
+      const [nextTokenId, maxSupplyValue] = await Promise.all([
         contract.getNextTokenId(),
         contract.MAX_SUPPLY()
       ]);
-      setSupply(Number(currentSupply));
+      setSupply(Number(nextTokenId) - 1); // количество заминченных NFT
       setMaxSupply(Number(maxSupplyValue));
     } catch (err) {
       console.error("Ошибка загрузки данных контракта:", err);
